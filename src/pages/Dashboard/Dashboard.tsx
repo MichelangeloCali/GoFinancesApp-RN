@@ -1,4 +1,5 @@
 import React from 'react'
+import { HighlightCard } from '../../components/HighlightCard/HighlightCard'
 
 import { 
   Container,
@@ -21,7 +22,6 @@ export const Dashboard = () => {
             <Photo 
               source={{ uri: 'https://avatars.githubusercontent.com/u/90471567?v=4' }} 
             />
-
             <User>
               <UserGreeting>Olá, </UserGreeting>
               <UserName>Michelangelo</UserName>
@@ -31,6 +31,8 @@ export const Dashboard = () => {
           <Icon name="power" />
         </UserWrapper>
       </Header>
+
+      <HighlightCard />
     </Container>
   )
 }
