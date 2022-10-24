@@ -11,6 +11,7 @@ import {
   UserGreeting,
   UserName,
   Icon,
+  HighlightCards,
 } from './styles'
 
 export const Dashboard = () => {
@@ -32,7 +33,11 @@ export const Dashboard = () => {
         </UserWrapper>
       </Header>
 
-      <HighlightCard />
+      <HighlightCards>
+        <HighlightCard />
+        <HighlightCard />
+        <HighlightCard />
+      </HighlightCards>
     </Container>
   )
 }
