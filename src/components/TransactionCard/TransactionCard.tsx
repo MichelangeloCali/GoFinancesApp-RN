@@ -9,7 +9,7 @@ import {
   Icon,
   CategoryName,
   Date,
- } from './styles';
+ } from './TransactionCard.styles';
 
  interface Category {
   name: string,
