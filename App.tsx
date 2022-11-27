@@ -12,6 +12,7 @@ import * as SplashScreen from 'expo-splash-screen';
 
 import theme from './src/global/styles/theme'
 import { Register } from './src/screens/Register/Register';
+import { CategorySelectType } from './src/screens/CategorySelectType/CategorySelectType';
 
 export default function App() {
   SplashScreen.preventAutoHideAsync();
@@ -29,7 +30,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Register />
+      <CategorySelectType />
     </ThemeProvider>
   )
 }
