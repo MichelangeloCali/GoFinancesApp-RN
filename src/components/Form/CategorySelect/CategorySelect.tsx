@@ -1,0 +1,20 @@
+import React from 'react'
+
+import { 
+  Container,
+  Category,
+  Icon,
+} from './CategorySelect.styles'
+
+interface Props {
+  title: string;
+}
+
+export const CategorySelect = ({title}: Props) => {
+  return (
+    <Container>
+      <Category>{title}</Category>
+      <Icon name="chevron-down" />
+    </Container>
+  )
+}
