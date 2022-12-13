@@ -4,15 +4,19 @@ import {
   Container,
   Category,
   Icon,
-} from './CategorySelect.styles'
+} from './CategorySelectButton.styles'
 
 interface Props {
   title: string;
+  onPress: () => void;
 }
 
-export const CategorySelect = ({title}: Props) => {
+export const CategorySelectButton = ({
+  title, 
+  onPress
+}: Props) => {
   return (
-    <Container>
+    <Container onPress={onPress}>
       <Category>{title}</Category>
       <Icon name="chevron-down" />
     </Container>
