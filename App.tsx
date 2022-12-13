@@ -1,7 +1,10 @@
 import React from 'react';
 import AppLoading from 'expo-app-loading';
-import { ThemeProvider } from 'styled-components';
 
+import theme from './src/global/styles/theme'
+import { Register } from './src/screens/Register/Register';
+
+import { ThemeProvider } from 'styled-components';
 import {
   useFonts,
   Poppins_400Regular,
@@ -10,9 +13,6 @@ import {
 } from '@expo-google-fonts/poppins';
 import * as SplashScreen from 'expo-splash-screen';
 
-import theme from './src/global/styles/theme'
-import { Register } from './src/screens/Register/Register';
-import { CategorySelectType } from './src/screens/CategorySelectType/CategorySelectType';
 
 export default function App() {
   SplashScreen.preventAutoHideAsync();
@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CategorySelectType />
+      <Register />
     </ThemeProvider>
   )
 }

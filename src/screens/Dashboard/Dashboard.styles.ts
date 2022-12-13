@@ -17,7 +17,6 @@ export const Header = styled.View`
   flex-direction: row;
   width: 100%;
   height: ${RFPercentage(42)}px;
-
   background-color: ${({ theme }) => theme.colors.primary};
 `
 
@@ -25,7 +24,6 @@ export const UserWrapper = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  
   width: 100%;
   padding: 0 24px;
   margin-top: ${getStatusBarHeight() + RFValue(28)}px;
@@ -39,7 +37,6 @@ export const UserInfo = styled.View`
 export const Photo = styled.Image`
   width: ${RFValue(50)}px;
   height: ${RFValue(50)}px;
-
   border-radius: 10px;
 `
 
