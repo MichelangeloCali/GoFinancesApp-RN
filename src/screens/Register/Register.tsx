@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Modal } from 'react-native'
+import { useForm } from 'react-hook-form'
 
-import { Input } from '../../components/Form/Input/Input'
+import { InputForm } from '../../components/Form/InputForm/InputForm'
 import { Button } from '../../components/Form/Button/Button'
 import { TransactionButton } from '../../components/Form/TransactionButton/TransactionButton'
 import { CategorySelectButton } from '../../components/Form/CategorySelectButton/CategorySelectButton'
 import { CategorySelect } from '../CategorySelect/CategorySelect'
-
 import { 
   Container,
   Header,
@@ -16,6 +16,10 @@ import {
   TransactionsTypes,
 } from './Register.styles'
 
+export interface FormData {
+  [name: string] : string
+}
+
 export const Register = () => {
   const [transactionType, setTransactionType] =useState('')
   const [categoryModalOpen, setCategoryModalOpen] =useState(false)
@@ -24,6 +28,11 @@ export const Register = () => {
     key: 'category',
     name: 'Categoria',
   })
+
+  const {
+    control,
+    handleSubmit,
+  } = useForm()
 
   const handleTransactionTypeSelect = (type: 'up' | 'down') => {
     setTransactionType(type)
@@ -37,6 +46,17 @@ export const Register = () => {
     setCategoryModalOpen(false)
   }
 
+  const handleRegister = (form: FormData) => {
+    const data = {
+      name: form.name,
+      amount: form.amount,
+      transactionType,
+      category: category.key
+    }
+
+    console.log(data);
+  }
+
   return (
     <Container>
       <Header>
@@ -45,10 +65,14 @@ export const Register = () => {
 
       <Form>
         <Fields>
-          <Input 
+          <InputForm 
+            name='name'
+            control={control}
             placeholder='Nome'
           />
-          <Input 
+          <InputForm 
+            name='amount'
+            control={control}
             placeholder='Preço'
           />
 
@@ -75,6 +99,7 @@ export const Register = () => {
 
         <Button 
           title="Enviar"
+          onPress={handleSubmit(handleRegister)}
         />
       </Form>
 
