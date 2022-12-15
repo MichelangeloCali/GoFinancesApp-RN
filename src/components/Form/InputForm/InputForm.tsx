@@ -3,16 +3,18 @@ import { TextInputProps } from 'react-native'
 import { Control, Controller } from 'react-hook-form'
 
 import { Input } from '../Input/Input'
-import { Container } from './InputForm.styles'
+import { Container, Error } from './InputForm.styles'
 
 interface Props extends TextInputProps {
   control: Control;
   name: string;
+  error?: string;
 }
 
 export const InputForm = ({
   control,
   name,
+  error,
   ...rest
 }: Props) => {
   return (
@@ -28,6 +30,7 @@ export const InputForm = ({
         )}
         name={name}
       />
+      {error && <Error>{ error }</Error>}
     </Container>
   )
 }
