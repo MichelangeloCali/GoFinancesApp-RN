@@ -1,10 +1,4 @@
 import React from 'react';
-import AppLoading from 'expo-app-loading';
-
-import theme from './src/global/styles/theme'
-import { Register } from './src/screens/Register/Register';
-
-import { ThemeProvider } from 'styled-components';
 import {
   useFonts,
   Poppins_400Regular,
@@ -13,6 +7,10 @@ import {
 } from '@expo-google-fonts/poppins';
 import * as SplashScreen from 'expo-splash-screen';
 
+import { ThemeProvider } from 'styled-components';
+import theme from './src/global/styles/theme'
+import { AppRoutes } from './src/routes/app.routes';
+import { NavigationContainer } from '@react-navigation/native'
 
 export default function App() {
   SplashScreen.preventAutoHideAsync();
@@ -30,7 +28,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Register />
+      <NavigationContainer>
+        <AppRoutes />
+      </NavigationContainer>
     </ThemeProvider>
   )
 }
