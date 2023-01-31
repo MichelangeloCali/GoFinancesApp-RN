@@ -8,7 +8,7 @@ import {
   Footer,
   Amount,
   LastTransaction,
-} from "./styles";
+} from "./HighlighCard.styles";
 
 interface Props {
   type: 'up' | 'down' | 'total';
